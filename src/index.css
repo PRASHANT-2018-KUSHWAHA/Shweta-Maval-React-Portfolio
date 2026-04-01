@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Inter", sans-serif;
+  
+  --color-brand-coral: #FF4D40;
+  --color-brand-ink: #FDFCFB;
+  --color-brand-paper: #1A1A1A;
+  --color-brand-muted: #A0A0A0;
+}
+
+@layer base {
+  body {
+    @apply text-brand-ink font-body antialiased overflow-x-hidden selection:bg-brand-coral selection:text-white;
+    background: radial-gradient(circle at top right, #2C2F33 0%, #121417 100%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+.serif-italic {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-paper;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-ink/10 rounded-full hover:bg-brand-ink/20 transition-colors;
+}
